@@ -4,11 +4,13 @@ import Carousel from "react-bootstrap/Carousel";
 export default function Home() {
   return (
     <div>
+        <h3>Welcome</h3>
       <Carousel fade>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://thumbs.dreamstime.com/b/food-ingredients-spices-cooking-delicious-italian-pizza-mushrooms-tomatoes-cheese-onion-oil-pepper-salt-basil-grater-olive-114683943.jpg"
+            // src="https://thumbs.dreamstime.com/b/food-ingredients-spices-cooking-delicious-italian-pizza-mushrooms-tomatoes-cheese-onion-oil-pepper-salt-basil-grater-olive-114683943.jpg"
+            src="https://foodish-api.herokuapp.com/images/pizza/pizza16.jpg"
             alt="Food, spices, cooking"
           />
           <Carousel.Caption>
