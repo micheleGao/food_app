@@ -21,13 +21,14 @@ export default function Home() {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://thumbs.dreamstime.com/b/assorted-indian-recipes-food-various-spices-rice-wooden-table-92742528.jpg"
+            // src="https://thumbs.dreamstime.com/b/assorted-indian-recipes-food-various-spices-rice-wooden-table-92742528.jpg"
+            src="https://foodish-api.herokuapp.com/images/rice/rice28.jpg"
             alt="assorted indian recipes"
           />
           <Carousel.Caption>
             <h3>
               Indian to Italian recipes,let your wild taste buds experience your
-              own take.{" "}
+              own take.
             </h3>
             <p>
               Let your own taste buds take the stage and your chef skills do the
@@ -38,7 +39,8 @@ export default function Home() {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://thumbs.dreamstime.com/b/nut-butter-banana-toast-kids-animal-face-food-art-healthy-meal-table-top-view-eating-lifestyle-menu-dieting-vegan-concept-115031536.jpg"
+            // src="https://thumbs.dreamstime.com/b/nut-butter-banana-toast-kids-animal-face-food-art-healthy-meal-table-top-view-eating-lifestyle-menu-dieting-vegan-concept-115031536.jpg"
+            src="https://foodish-api.herokuapp.com/images/dessert/dessert3.jpg"
             alt="Nut, butter, toast"
           />
           <Carousel.Caption>

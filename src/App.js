@@ -38,7 +38,7 @@ function App() {
     const getDrinkRecipes = async () => {
         try {
             const response = await fetch(
-              'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=z'
+              'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=b'
             )
             const data = await response.json()
             console.log(data.drinks)
