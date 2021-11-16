@@ -38,37 +38,21 @@ function App() {
     const getDrinkRecipes = async () => {
         try {
             const response = await fetch(
-              'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=b'
+              'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=c'
+              // 'www.thecocktaildb.com/api/json/v1/1/random.php'
+            //   'www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic'
             )
             const data = await response.json()
-            console.log(data.drinks)
+            console.log(data)
             setDrink(data)
         } catch (error) {
-            console.log('oops', error)
+            console.log(error)
         }
     }
     //hook (uesEffect)
     useEffect(() => {
         getDrinkRecipes()
     }, [])
-
-  //   const getRandomPics = async () => {
-  //     try {
-  //         const response = await fetch(
-  //           'https://foodish-api.herokuapp.com/images/pizza/'
-  //         )
-  //         const data = await response.json()
-  //         console.log(data)
-  //         setPics(data)
-  //     } catch (error) {
-  //         console.log('oops', error)
-  //     }
-  // }
-  // //hook (uesEffect)
-  // useEffect(() => {
-  //     getRandomPics()
-  // }, [])
-
 
     useEffect(() => {
         setRedirect(false)

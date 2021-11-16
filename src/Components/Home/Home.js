@@ -41,6 +41,7 @@ export default function Home() {
             className="d-block w-100"
             // src="https://thumbs.dreamstime.com/b/nut-butter-banana-toast-kids-animal-face-food-art-healthy-meal-table-top-view-eating-lifestyle-menu-dieting-vegan-concept-115031536.jpg"
             src="https://foodish-api.herokuapp.com/images/dessert/dessert3.jpg"
+            //https://foodish-api.herokuapp.com/images/burger/burger68.jpg
             alt="Nut, butter, toast"
           />
           <Carousel.Caption>
