@@ -13,7 +13,15 @@ export default function Home() {
             src="https://foodish-api.herokuapp.com/images/pizza/pizza16.jpg"
             alt="Food, spices, cooking"
           />
-          <Carousel.Caption>
+          <Carousel.Caption
+            style={{
+                backgroundColor: 'transparent',
+                color:'white',
+                textShadow:'2px 2px 4px #000000',
+                fontSize: '20px',
+                textAlign: 'center',
+            }}
+          >
             <h3>Food, spices, cooking</h3>
             <p>Let your dreams come true eating well!</p>
           </Carousel.Caption>
@@ -25,7 +33,15 @@ export default function Home() {
             src="https://foodish-api.herokuapp.com/images/rice/rice28.jpg"
             alt="assorted indian recipes"
           />
-          <Carousel.Caption>
+          <Carousel.Caption 
+            style={{
+                backgroundColor: 'transparent',
+                color:'white',
+                textShadow:'2px 2px 4px #000000',
+                fontSize: '20px',
+                textAlign: 'center',
+            }}
+          >
             <h3>
               Indian to Italian recipes,let your wild taste buds experience your
               own take.
@@ -45,7 +61,7 @@ export default function Home() {
             alt="Nut, butter, toast"
           />
           <Carousel.Caption>
-            <h3>Little snack ideas even adults love.</h3>
+            <h3 style={{color:"white", fontStyle:"bold", backgroundColor:"black", width:"20%"}}>Little snack ideas even adults love.</h3>
             <p>Sometimes the little things are the best.</p>
           </Carousel.Caption>
         </Carousel.Item>

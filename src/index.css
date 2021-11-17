@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,10 +10,50 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
 
 /* .drink-card{
   display:flex;
   flex-wrap: wrap;
 
+} */
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+*{ box-sizing:border-box}
+
+/* *:before,
+*:after {
+	box-sizing:inherit;
+} */
+
+/* .flexbox-container{
+  display: flex;
+  flex-direction:column;
+  flex-wrap: nowrap;
+  align-items: space-between;
+} */
+
+/* .drinks-list{
+  display:flex;
+  flex-direction:row;
+  justify-items: center;
+  flex-wrap: wrap-reverse;
+  padding-left: 60px;
+  padding: auto;
+  
+} */
+
+/* .drink-card{
+  display: flex;
+  flex-direction:row;
+  text-align: center;
+} */
+
+/* .drinks-list{
+  display:flex;
+  margin: 0;
+  flex-direction:row;
+  text-align: center;
+  flex-basis: 10%;
+  flex-wrap: wrap;
+  justify-content:flex-start;
 } */

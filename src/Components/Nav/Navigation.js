@@ -15,7 +15,7 @@ export default function Navigation() {
                             <Navbar.Brand href="/home">Eat Up</Navbar.Brand>
                             <Nav className="me-auto">
                                 {/* <Nav.Link href="/home">Home</Nav.Link> */}
-                                <Nav.Link href="/features">Features</Nav.Link>
+                                <Nav.Link href="/DrinksRecipe">Drinks recipes</Nav.Link>
                                 <Nav.Link href="/recipes">Recipes</Nav.Link>
                             </Nav>
                         </Container>
