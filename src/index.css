@@ -25,12 +25,12 @@ code {
 	box-sizing:inherit;
 } */
 
-/* .flexbox-container{
+.flexbox-container{
   display: flex;
   flex-direction:column;
   flex-wrap: nowrap;
   align-items: space-between;
-} */
+}
 
 /* .drinks-list{
   display:flex;

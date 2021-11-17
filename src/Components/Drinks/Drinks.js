@@ -2,7 +2,7 @@ import React from 'react';
 import { Card } from 'react-bootstrap'
 
 
-export default Drinks(){
+export default function Drinks(){
 
     const DrinkList = [
         {
@@ -66,6 +66,8 @@ export default Drinks(){
             strDrinkThumb:
                 'https://www.thecocktaildb.com/images/media/drink/rtwwsx1472720307.jpg',
             idDrink: 12654,
+            strIngredient1: ["Strawberries", "Banana", "Yoghurt", "Milk", "Honey"],
+            strInstructions: "Blend all together in a blender until smooth.",
         },
         {
             strDrink: 'Banana Strawberry Shake',
@@ -101,25 +103,31 @@ export default Drinks(){
             strIngredient1: ["Cocoa powder", "Sugar", "Cornstarch","Water","Milk"],
             strInstructions:"Shift the cocoa and sugar together into a medium-sized saucepan. Dissolve the cornstarch in the water, and stir into the cocoa and sugar until it is a smooth paste. Begin heating the mixture, stirring it with a whisk, and gradually pour in the milk. Continue stirring with the whisk as you bring the liquid to a simmer. Allow the chocolate to simmer for about 10 minutes, stirring often, until it is thick, glossy and completely smooth. Serve steaming hot in coffee mug. Serves six.",
         },
-        //________________________________________________________//
         {
             strDrink: 'Chocolate Beverage',
             strDrinkThumb:
                 'https://www.thecocktaildb.com/images/media/drink/jbqrhv1487603186.jpg',
             idDrink: 12732,
+            strIngredient1: ["Milk", "Chocolate", "Cinnamon", "Egg"],
+            strInstructions: "Boil milk in the top of a deep double boiler five minutes. Remove from fire and add chocolate, mixed with the cinnamon, a little at a time, beating with molinillo or egg beater after each addition. When the chocolate is thoroughly blended, heat to the boiling point. Place over bottom of double boiler and add eggs, whipping constantly, until they are thoroughly blended and the mixture is frothing. Serve in coffee mug. Serves eight.",
         },
         {
             strDrink: 'Chocolate Drink',
             strDrinkThumb:
                 'https://www.thecocktaildb.com/images/media/drink/q7w4xu1487603180.jpg',
             idDrink: 12734,
+            strIngredient1: ["Chocolate", "Milk", "Water"],
+            strInstructions: "Melt the bar in a small amount of boiling water. Add milk. Cook over low heat, whipping gently (with a whisk, i would assume) until heated well. Don't let it boil! Serve in coffee mug.",
         },
         {
             strDrink: 'Coke and Drops',
             strDrinkThumb:
                 'https://www.thecocktaildb.com/images/media/drink/yrtxxp1472719367.jpg',
             idDrink: 17108,
+            strIngredient1: ["Coca-Cola","Lemon juice"],
+            strInstructions: "Take a glass, pour the Coke in the glass, then you take 7 drops of lemon juice. Granish with a lemon slice on the rim of the glass.",
         },
+            //________________________________________________________//
         {
             strDrink: 'Cranberry Punch',
             strDrinkThumb:
@@ -381,6 +389,78 @@ export default Drinks(){
     ]
     return (
         <div>
+            <div className="flexbox-container"
+            style={{
+                display: "flex",
+                flexDirection:"column",
+                /* flex-wrap: wrap; */
+                alignItems: "center"
+
+            }}>
+                <div className='drinks-list'
+                    style={{
+                        display:"flex",
+                        flexDirection:"row",
+                        justifyItems: "center",
+                        flexWrap: "wrap",
+                        // padding-left: 60px;
+                        // padding: auto;
+                        
+                    }}
+                >
+                    {DrinkList &&
+                        DrinkList.map((drink, id) => {
+                            return (
+                                <div 
+                                    style={{
+                                        display: "flex",
+                                        flexDirection:"column",
+                                        margin:"auto",
+                                    }}
+                                >
+                                <Card  key ={id}  border="light" className="bg-dark text-white"
+                                    style={{
+                                        width: '18rem',
+                                        display:'flex',
+                                        margin:'0', 
+                                        flexDirection:"column",
+                                        flexWrap:"nowrap",
+                                        marginTop:"1rem",
+                                        marginRight:"auto",
+                                        marginLeft:"auto",
+                                        borderRadius:"3rem",
+                                           
+                                    }}
+                                >
+                                    <Card.Img
+                                        src={drink.strDrinkThumb}
+                                        alt="drink photo"
+                                        id={id}
+                                    />
+                                    <Card.ImgOverlay>
+                                        <Card.Title
+                                            style={{
+                                                backgroundColor: 'transparent',
+                                                fontSize: '20px',
+                                                textAlign: 'center',
+                                                textShadow: "2px 2px 4px #000000"
+                                            }}
+                                        >
+                                            {drink.strDrink}
+                                        </Card.Title>
+                                        <Card.Text style={{ backgroundColor: "transparent", fontSize:"13px", textAlign: "center", textShadow: "2px 2px 4px #000000"}}>
+                                            <h5>Instructions:</h5>
+                                            {/* marginTop:"10px", */}
+                                            {drink.strInstructions}
+                                        </Card.Text> 
+                                    </Card.ImgOverlay>
+                                </Card>
+                                
+                                </div>
+                            )
+                        })}
+                    </div>
+                </div>
         </div>
 
     )
