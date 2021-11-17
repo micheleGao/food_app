@@ -1,10 +1,10 @@
-import React from 'react';
-import { Card } from 'react-bootstrap'
+import React from 'react'
+import { Card, Button, Modal } from 'react-bootstrap'
 import { useContext } from 'react'
 import { DataContext } from '../../App'
+import { useState } from 'react'
 
-
-export default function Drinks(){
+export default function Drinks() {
     const drinkData = useContext(DataContext)
     console.log(drinkData)
 
@@ -393,82 +393,140 @@ export default function Drinks(){
     //         idDrink: 12728,
     //     },
     // ]
+
+    const [show, setShow] = useState(false)
+
+    const handleClose = () => setShow(false)
+    const handleShow = () => setShow(true)
     return (
         <div>
-            <div className="flexbox-container"
-            style={{
-                display: "flex",
-                flexDirection:"column",
-                /* flex-wrap: wrap; */
-                alignItems: "center"
-
-            }}>
-                <div className='drinks-list'
+            <div
+                className="flexbox-container"
+                style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    /* flex-wrap: wrap; */
+                    alignItems: 'center',
+                }}
+            >
+                <div
+                    className="drinks-list"
                     style={{
-                        display:"flex",
-                        flexDirection:"row",
-                        justifyItems: "center",
-                        flexWrap: "wrap",
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyItems: 'center',
+                        flexWrap: 'wrap',
                         // padding-left: 60px;
                         // padding: auto;
-                        
                     }}
                 >
                     {drinkData.DrinkList &&
                         drinkData.DrinkList.map((drink, id) => {
                             return (
-                                <div 
+                                <div
                                     style={{
-                                        display: "flex",
-                                        flexDirection:"column",
-                                        margin:"auto",
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        margin: 'auto',
                                     }}
                                 >
-                                <Card  key ={id}  border="light" className="bg-dark text-white"
-                                    style={{
-                                        width: '18rem',
-                                        display:'flex',
-                                        margin:'0', 
-                                        flexDirection:"column",
-                                        flexWrap:"nowrap",
-                                        marginTop:"1rem",
-                                        marginRight:"2rem",
-                                        marginLeft:"2rem",
-                                        borderRadius:"3rem",
-                                           
-                                    }}
-                                >
-                                    <Card.Img
-                                        src={drink.strDrinkThumb}
-                                        alt="drink photo"
-                                        id={id}
-                                        style={{borderRadius:"17px", border: "2px solid black"}}
-                                    />
-                                    <Card.ImgOverlay>
-                                        <Card.Title
+                                    <Card
+                                        key={id}
+                                        border="light"
+                                        className="bg-dark text-white"
+                                        style={{
+                                            width: '18rem',
+                                            display: 'flex',
+                                            margin: '0',
+                                            flexDirection: 'column',
+                                            flexWrap: 'nowrap',
+                                            marginTop: '1rem',
+                                            marginRight: '2rem',
+                                            marginLeft: '2rem',
+                                            borderRadius: '3rem',
+                                        }}
+                                    >
+                                        <Card.Img
+                                            src={drink.strDrinkThumb}
+                                            alt="drink photo"
+                                            id={id}
                                             style={{
-                                                backgroundColor: 'transparent',
-                                                fontSize: '20px',
-                                                textAlign: 'center',
-                                                textShadow: "2px 2px 4px #000000"
+                                                borderRadius: '17px',
+                                                border: '2px solid black',
                                             }}
-                                        >
-                                            {drink.strDrink}
-                                        </Card.Title>
-                                        <Card.Text style={{ backgroundColor: "transparent", fontSize:"13px", textAlign: "center", textShadow: "2px 2px 4px #000000"}}>
+                                        />
+                                        <Card.ImgOverlay>
+                                            <Button
+                                                style={{
+                                                    backgroundColor:
+                                                        'transparent',
+                                                }}
+                                                onClick={handleShow}
+                                            >
+                                                <Card.Title
+                                                    style={{
+                                                        backgroundColor:
+                                                            'transparent',
+                                                        color: 'white',
+                                                        fontSize: '20px',
+                                                        textAlign: 'center',
+                                                        textShadow:
+                                                            '2px 2px 4px #000000',
+                                                    }}
+                                                >
+                                                    {drink.strDrink}
+                                                </Card.Title>
+                                            </Button>
+                                            {/* <Card.Text style={{ backgroundColor: "transparent", fontSize:"13px", textAlign: "center", textShadow: "2px 2px 4px #000000"}}>
                                             <h5>Instructions:</h5>
-                                            {/* marginTop:"10px", */}
                                             {drink.strInstructions}
-                                        </Card.Text> 
-                                    </Card.ImgOverlay>
-                                </Card>
-                                
+                                        </Card.Text>  */}
+                                        </Card.ImgOverlay>
+                                    </Card>
+                                    <Modal.Dialog>
+                                        <Modal.Header closeButton>
+                                            <Modal.Title>
+                                            {drink.strDrink}
+                                            </Modal.Title>
+                                        </Modal.Header>
+
+                                        <Modal.Body>
+                                            <h1>Ingredients : </h1>
+                                            <p>{drink.strIngredient1}</p>
+                                            <h1>Instructions : </h1>
+                                            <p>{drink.strInstructions}</p>
+                                        </Modal.Body>
+
+                                        <Modal.Footer>
+                                            <Button variant="secondary">
+                                                Close
+                                            </Button>
+                                        </Modal.Footer>
+                                    </Modal.Dialog>
+                                    {/* <Modal
+                                                show={show}
+                                                onHide={handleClose}
+                                                animation={false}
+                                            >
+                                                <Modal.Body>
+                                                    {drink.strDrink}
+                                                    {drink.strDrink}
+                                                   {drink.strIngredient1}
+                                                   <h1>Instructions:</h1>
+                                                   {drink.strInstructions}
+                                                </Modal.Body>
+                                                <Button
+                                                        variant="secondary"
+                                                        onClick={handleClose}
+                                                    >
+                                                        Close
+                                                    </Button>
+                                            </Modal> */}
                                 </div>
                             )
                         })}
-                    </div>
                 </div>
+            </div>
         </div>
-
     )
 }

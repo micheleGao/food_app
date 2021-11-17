@@ -1,8 +1,13 @@
 import React from 'react'
 import RecipeCards from './RecipeCards'
-import { Card } from 'react-bootstrap'
+import { Button, Card, Modal } from 'react-bootstrap'
+import { useState } from 'react'
 
 export default function Recipes() {
+    const [show, setShow] = useState(false)
+    const handleClose = () => setShow(false)
+    const handleShow = () => setShow(true)
+
     const veganRecipes = [
         {
             dishName: 'Creamy vegan pasta',
@@ -58,22 +63,31 @@ export default function Recipes() {
             Img: 'https://cdn.loveandlemons.com/wp-content/uploads/2021/11/beet-salad-1.jpg',
         },
         {
-            dishName:"Green Beans Almondine Recipe",
-            ingredients:["Fresh green beans, of course! French haricots verts are best here, as they’re more tender than other varieties of string beans.Sliced almonds – Their nutty crunch contrasts perfectly with the grassy, tender green beans.Shallot and garlic – For savory depth of flavor.Extra-virgin olive oil – For sautéing the shallot and green beans. It adds a nice richness that ties the whole dish together.Fresh lemon juice – Its bright flavor balances this simple recipe.And salt and pepper – To make all the flavors pop!"],
-            Instructions:"Bring a large pot of salted water to a boil and set a large bowl of ice water nearby. Drop the green beans into the boiling water and blanch for 2 minutes. Drain, and immediately immerse in the ice water to stop the cooking process. Drain, and transfer to a towel to dry.Heat a cast-iron skillet over medium heat. Add the almonds to the dry skillet and toast until golden brown, 2 to 3 minutes. Remove the almonds from the pan and set aside.Add the oil to the pan (turn down the heat down if necessary), then add the shallot and the salt and sauté for 2 minutes. Add the green beans and sauté, 2 to 4 more minutes, until the green beans are warmed through and tender. Remove the pan from the heat, add the garlic and lemon juice and toss. Season to taste with salt and pepper and transfer to a serving dish. Top with the almonds and serve.",
-            Img:"https://cdn.loveandlemons.com/wp-content/uploads/2021/11/green-beans-almondine-1.jpg",
+            dishName: 'Green Beans Almondine Recipe',
+            ingredients: [
+                'Fresh green beans, of course! French haricots verts are best here, as they’re more tender than other varieties of string beans.Sliced almonds – Their nutty crunch contrasts perfectly with the grassy, tender green beans.Shallot and garlic – For savory depth of flavor.Extra-virgin olive oil – For sautéing the shallot and green beans. It adds a nice richness that ties the whole dish together.Fresh lemon juice – Its bright flavor balances this simple recipe.And salt and pepper – To make all the flavors pop!',
+            ],
+            Instructions:
+                'Bring a large pot of salted water to a boil and set a large bowl of ice water nearby. Drop the green beans into the boiling water and blanch for 2 minutes. Drain, and immediately immerse in the ice water to stop the cooking process. Drain, and transfer to a towel to dry.Heat a cast-iron skillet over medium heat. Add the almonds to the dry skillet and toast until golden brown, 2 to 3 minutes. Remove the almonds from the pan and set aside.Add the oil to the pan (turn down the heat down if necessary), then add the shallot and the salt and sauté for 2 minutes. Add the green beans and sauté, 2 to 4 more minutes, until the green beans are warmed through and tender. Remove the pan from the heat, add the garlic and lemon juice and toss. Season to taste with salt and pepper and transfer to a serving dish. Top with the almonds and serve.',
+            Img: 'https://cdn.loveandlemons.com/wp-content/uploads/2021/11/green-beans-almondine-1.jpg',
         },
         {
-            dishName:"Instant Pot Lentil Soup",
-            ingredients:["2 tablespoons extra-virgin olive oil,1 medium yellow onion, chopped,2 celery stalks, chopped2 cups chopped carrots, about 4 medium,6 kale leaves, stems finely diced, leaves chopped,4 garlic cloves, grated,1 (14-ounce) can diced fire-roasted tomatoes,¾ cup uncooked green lentils, 2 tablespoons white wine vinegar, 12 fresh thyme sprigs, bundled, 1½ teaspoons sea salt, Heaping ½ teaspoon ground cumin, Freshly ground black pepper, 6 cups vegetable broth, Red pepper flakes, ½ cup chopped fresh parsley, for garnish, Grated Parmesan, for serving, optional, Crusty bread, for serving"],
-            Instructions:"Select the Sauté function on your Instant Pot. Set the level to medium and set the time to 8 minutes. When the Instant Pot is preheated, drizzle the oil into the pot and add the onion, celery, and carrots. Cook for the 8 minutes, or until the vegetables soften.Add the kale stems, garlic, tomatoes, lentils, vinegar, thyme bundle, salt, cumin and several grinds of pepper to the pot and stir. Pour in the vegetable broth and secure the lid on the Instant Pot. Pressure cook on high for 15 minutes.Allow the Instant Pot to release pressure naturally. This will take 20 to 30 minutes. When the float valve drops, remove the lid and stir in the kale leaves. Add a pinch of red pepper flakes and season to taste with salt and pepper.Remove the thyme bundle, and garnish with the parsley and grated Parmesan, if desired. Serve with crusty bread.",
-            Img:"https://cdn.loveandlemons.com/wp-content/uploads/2021/10/instant-pot-lentil-soup-1.jpg",
+            dishName: 'Instant Pot Lentil Soup',
+            ingredients: [
+                '2 tablespoons extra-virgin olive oil,1 medium yellow onion, chopped,2 celery stalks, chopped2 cups chopped carrots, about 4 medium,6 kale leaves, stems finely diced, leaves chopped,4 garlic cloves, grated,1 (14-ounce) can diced fire-roasted tomatoes,¾ cup uncooked green lentils, 2 tablespoons white wine vinegar, 12 fresh thyme sprigs, bundled, 1½ teaspoons sea salt, Heaping ½ teaspoon ground cumin, Freshly ground black pepper, 6 cups vegetable broth, Red pepper flakes, ½ cup chopped fresh parsley, for garnish, Grated Parmesan, for serving, optional, Crusty bread, for serving',
+            ],
+            Instructions:
+                'Select the Sauté function on your Instant Pot. Set the level to medium and set the time to 8 minutes. When the Instant Pot is preheated, drizzle the oil into the pot and add the onion, celery, and carrots. Cook for the 8 minutes, or until the vegetables soften.Add the kale stems, garlic, tomatoes, lentils, vinegar, thyme bundle, salt, cumin and several grinds of pepper to the pot and stir. Pour in the vegetable broth and secure the lid on the Instant Pot. Pressure cook on high for 15 minutes.Allow the Instant Pot to release pressure naturally. This will take 20 to 30 minutes. When the float valve drops, remove the lid and stir in the kale leaves. Add a pinch of red pepper flakes and season to taste with salt and pepper.Remove the thyme bundle, and garnish with the parsley and grated Parmesan, if desired. Serve with crusty bread.',
+            Img: 'https://cdn.loveandlemons.com/wp-content/uploads/2021/10/instant-pot-lentil-soup-1.jpg',
         },
         {
-            dishName:"Vegan Broccoli Soup",
-            ingredients:["2 tablespoons extra-virgin olive oil, more for drizzling,1 small yellow onion, diced,½ cup chopped celery,⅓ cup chopped carrots,1 lb. broccoli, stems diced, florets choppe,1 small yukon gold potato, diced (1 cup),4 garlic cloves, minced,4 cups vegetable broth,3 cups cubed bread, for croutons,½ cup raw cashews,1½ teaspoons apple cider vinegar,1/2 teaspoon Dijon mustard,¼ cup fresh dill,1 tablespoon fresh lemon juice,3/4 teaspoon sea salt,freshly ground black pepper"],
-            Instructions:"Preheat the oven to 350°F and line 2 small baking sheets with parchment paper.Heat the oil in a large pot or Dutch oven over medium heat. Add the onion, celery, carrots, broccoli stems, salt, and pepper and sauté until softened, about 10 minutes. Add the potatoes and garlic and stir, then add the broth and simmer for 20 minutes until the potatoes are soft. Let cool slightly.Set aside 1 cup of the broccoli florets to roast as a topping for the soup. Place the remaining florets in a steamer basket, and set over a pot with 1-inch of water. Bring the water to a simmer, cover, and let steam 5 minutes, until the broccoli is tender.Meanwhile, place the reserved broccoli florets and the bread cubes on the baking sheets. Toss with a drizzle of olive oil and a pinch of salt and roast until the bread is crispy and the broccoli is tender and browned around the edges, 10 to 15 minutes.Transfer the soup to the blender and add the cashews, apple cider vinegar, and mustard, and blend until creamy. Work in batches, if necessary. Add the steamed broccoli florets, dill, and lemon juice, and pulse until the broccoli is incorporated but still chunky. The soup should be thick; if it's too thick, add 1/2 cup water to thin to your desired consistency.Season to taste and serve the soup in bowls with the roasted broccoli and croutons on top",
-            Img:"https://cdn.loveandlemons.com/wp-content/uploads/2017/11/vegan-broccoli-soup.jpg",
+            dishName: 'Vegan Broccoli Soup',
+            ingredients: [
+                '2 tablespoons extra-virgin olive oil, more for drizzling,1 small yellow onion, diced,½ cup chopped celery,⅓ cup chopped carrots,1 lb. broccoli, stems diced, florets choppe,1 small yukon gold potato, diced (1 cup),4 garlic cloves, minced,4 cups vegetable broth,3 cups cubed bread, for croutons,½ cup raw cashews,1½ teaspoons apple cider vinegar,1/2 teaspoon Dijon mustard,¼ cup fresh dill,1 tablespoon fresh lemon juice,3/4 teaspoon sea salt,freshly ground black pepper',
+            ],
+            Instructions:
+                "Preheat the oven to 350°F and line 2 small baking sheets with parchment paper.Heat the oil in a large pot or Dutch oven over medium heat. Add the onion, celery, carrots, broccoli stems, salt, and pepper and sauté until softened, about 10 minutes. Add the potatoes and garlic and stir, then add the broth and simmer for 20 minutes until the potatoes are soft. Let cool slightly.Set aside 1 cup of the broccoli florets to roast as a topping for the soup. Place the remaining florets in a steamer basket, and set over a pot with 1-inch of water. Bring the water to a simmer, cover, and let steam 5 minutes, until the broccoli is tender.Meanwhile, place the reserved broccoli florets and the bread cubes on the baking sheets. Toss with a drizzle of olive oil and a pinch of salt and roast until the bread is crispy and the broccoli is tender and browned around the edges, 10 to 15 minutes.Transfer the soup to the blender and add the cashews, apple cider vinegar, and mustard, and blend until creamy. Work in batches, if necessary. Add the steamed broccoli florets, dill, and lemon juice, and pulse until the broccoli is incorporated but still chunky. The soup should be thick; if it's too thick, add 1/2 cup water to thin to your desired consistency.Season to taste and serve the soup in bowls with the roasted broccoli and croutons on top",
+            Img: 'https://cdn.loveandlemons.com/wp-content/uploads/2017/11/vegan-broccoli-soup.jpg',
         },
         // {
         //     dishName:"",
@@ -115,88 +129,123 @@ export default function Recipes() {
 
     return (
         <div>
-            <h3> welcome to the recipes page</h3>
-            <RecipeCards />
-            <div
-                className="flexbox-container"
-                style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    /* flex-wrap: wrap; */
-                    alignItems: 'center',
-                }}
-            >
+            <h1> Hello </h1>
+            {/* <Button className="modal" variant="primary" onClick={handleShow}> */}
+            {/* <Button>  */}
                 <div
-                    className="drinks-list"
+                    className="flexbox-container"
                     style={{
                         display: 'flex',
-                        flexDirection: 'row',
-                        justifyItems: 'center',
-                        flexWrap: 'wrap',
-                        // padding-left: 60px;
-                        // padding: auto;
+                        flexDirection: 'column',
+                        /* flex-wrap: wrap; */
+                        alignItems: 'center',
                     }}
                 >
-                    {veganRecipes &&
-                        veganRecipes.map((vegan, id) => {
-                            return (
-                                <div>
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            flexDirection: 'column',
-                                            margin: 'auto',
-                                        }}
-                                    >
-                                        <Card
-                                            key={id}
-                                            border="light"
-                                            className="bg-dark text-white"
+                    <div
+                        className="drinks-list"
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'row',
+                            justifyItems: 'center',
+                            flexWrap: 'wrap',
+                            // padding-left: 60px;
+                            // padding: auto;
+                        }}
+                    >
+                        {veganRecipes &&
+                            veganRecipes.map((vegan, id) => {
+                                return (
+                                    <div>
+                                        <div
                                             style={{
-                                                width: '18rem',
                                                 display: 'flex',
-                                                margin: '0',
                                                 flexDirection: 'column',
-                                                flexWrap: 'nowrap',
-                                                marginTop: '1rem',
-                                                marginRight: 'auto',
-                                                marginLeft: 'auto',
-                                                borderRadius: '3rem',
+                                                margin: 'auto',
                                             }}
                                         >
-                                            <Card.Img
-                                                src={vegan.Img}
-                                                alt="Food photo"
-                                                id={id}
-                                                height="400px"
-                                                width="200px"
-                                                style={{borderRadius:"17px", border: "2px solid black"}}
-                                            />
-                                            <Card.ImgOverlay>
-                                                <Card.Title
+                                            <Card
+                                                key={id}
+                                                border="light"
+                                                className="bg-dark text-white"
+                                                style={{
+                                                    width: '18rem',
+                                                    display: 'flex',
+                                                    margin: '0',
+                                                    flexDirection: 'column',
+                                                    flexWrap: 'nowrap',
+                                                    marginTop: '1rem',
+                                                    marginRight: 'auto',
+                                                    marginLeft: 'auto',
+                                                    borderRadius: '3rem',
+                                                }}
+                                            >
+                                                <Card.Img
+                                                    src={vegan.Img}
+                                                    alt="Food photo"
+                                                    id={id}
+                                                    height="400px"
+                                                    width="200px"
                                                     style={{
-                                                        backgroundColor:
-                                                            'transparent',
-                                                        fontSize: '20px',
-                                                        textAlign: 'center',
-                                                        textShadow:
-                                                            '2px 2px 4px #000000',
+                                                        borderRadius: '17px',
+                                                        border: '2px solid black',
                                                     }}
-                                                >
-                                                    {vegan.dishName}
-                                                </Card.Title>
-                                                {/* <Card.Text style={{ backgroundColor: "transparent", fontSize:"13px", textAlign: "center", textShadow: "2px 2px 4px #000000"}}>
-                                            <h5>Instructions:</h5>
-                                            {vegan.Instructions}
-                                        </Card.Text>  */}
-                                            </Card.ImgOverlay>
-                                        </Card>
+                                                />
+                                                <Card.ImgOverlay>
+                                                    <Card.Title
+                                                        style={{
+                                                            backgroundColor:
+                                                                'transparent',
+                                                            fontSize: '20px',
+                                                            textAlign: 'center',
+                                                            textShadow:
+                                                                '2px 2px 4px #000000',
+                                                        }}
+                                                    >
+                                                        {vegan.dishName}
+                                                    </Card.Title>
+                                                    {/* <Card.Text style={{ backgroundColor: "transparent", fontSize:"13px", textAlign: "center", textShadow: "2px 2px 4px #000000"}}>
+                                                <h5>Instructions:</h5>
+                                                {vegan.Instructions}
+                                            </Card.Text>  */}
+                                                </Card.ImgOverlay>
+                                            </Card>
+                                        </div>
                                     </div>
-                                </div>
-                            )
-                        })}
+                                )
+                            })}
+                    </div>
                 </div>
-            </div>
+                {/* </Button> */}
+            {/* </Button> */}
+            {/* <Modal
+                show={show}
+                onHide={handleClose}
+                backdrop="static"
+                keyboard={false}
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title>Ingredients & Instructions</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                            {veganRecipes &&
+                                veganRecipes.map((vegan, id) => {
+                                    return (
+                                        <div>
+                                            <p style={{ backgroundColor: "transparent", fontSize:"13px", textAlign: "center", textShadow: "2px 2px 4px #000000"}}>
+                                                    <h5 className={id}> Instructions:</h5>
+                                                    {vegan.Instructions}
+                                            
+                                            </p>
+                                        </div>
+                                    )
+                            })}
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal> */}
         </div>
     )
 }

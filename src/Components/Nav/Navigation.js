@@ -17,6 +17,7 @@ export default function Navigation() {
                                 {/* <Nav.Link href="/home">Home</Nav.Link> */}
                                 <Nav.Link href="/DrinksRecipe">Drinks recipes</Nav.Link>
                                 <Nav.Link href="/recipes">Recipes</Nav.Link>
+                                <Nav.Link href="/recipeCards">RecipeCards</Nav.Link>
                             </Nav>
                         </Container>
                     </Navbar>
